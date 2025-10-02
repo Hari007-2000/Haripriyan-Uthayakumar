@@ -4,6 +4,8 @@ title: "Home"
 permalink: /
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
 # 👋 Welcome
 
 I am **Haripriyan Uthayakumar**, a Graduate Research Assistant at Purdue University.  
