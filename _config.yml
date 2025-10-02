@@ -1,0 +1,15 @@
+title: "Haripriyan Uthayakumar"
+description: "Graduate Research Assistant | Purdue University"
+author: "Haripriyan Uthayakumar"
+
+# GitHub Pages settings
+url: "https://hari007-2000.github.io"
+baseurl: "/Haripriyan-Uthayakumar"   # must match repo name
+
+# Theme
+theme: minima   # simple built-in theme
+
+# Plugins GitHub Pages supports
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
