@@ -1,22 +1,15 @@
 ---
-layout: home
-title: "Welcome"
+layout: page
+title: "Home"
+permalink: /
 ---
 
-# Hello, I’m Haripriyan 👋
+# 👋 Welcome
 
-I am a Graduate Research Assistant at Purdue University working on **sustainability, stream ecology, and pharmaceutical circular economy**.
+I am **Haripriyan Uthayakumar**, a Graduate Research Assistant at Purdue University.  
+I work on sustainability, stream ecology, and the pharmaceutical circular economy.
 
-## 🔹 About Me
-- MS/PhD student in Agricultural & Biological Engineering
-- Researching **AI for ecology** and **industrial symbiosis**
-- Passionate about **circular economy for pharmaceuticals**
-
-## 🔹 Projects
-- **NetConUS**: Stream network classification for U.S. biodiversity
-- **PharmaSort**: AI-based classification of pharmaceutical waste
-- **EcoPharmaHub**: Circular economy for industrial ecosystems
-
-## 🔹 Contact
-📧 [Email](mailto:hpcbe2020@gmail.com)  
-🔗 [GitHub](https://github.com/Hari007-2000)
+🔹 Explore my work in:
+- [Projects](/Haripriyan-Uthayakumar/projects)
+- [Publications](/Haripriyan-Uthayakumar/publications)
+- [Contact](/Haripriyan-Uthayakumar/contact)
