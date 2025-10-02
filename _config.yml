@@ -17,3 +17,10 @@ header_pages:
   - projects.md
   - publications.md
   - contact.md
+
+# Custom styles
+sass:
+  style: compressed
+
+include:
+  - assets
