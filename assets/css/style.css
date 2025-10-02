@@ -1,6 +1,6 @@
 /* Set a wallpaper background for the homepage */
 body {
-  background: url('/Haripriyan-Uthayakumar/assets/img/wallpaper.jpg') no-repeat center center fixed;
+  background: url('/Haripriyan-Uthayakumar/assets/wallpaper.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
