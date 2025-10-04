@@ -1,47 +1,38 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileText, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import qrchemImage from "@/assets/figures/QR code.png";
+import microAlgaeImage from "@/assets/figures/micro-algae.png";
+import nanoParticleImage from "@/assets/figures/nano-particle.png";
 
 const publications = [
   {
-    title: "Machine Learning Approaches for Sustainable Manufacturing Process Optimization",
-    authors: "Your Name, Co-Author A, Co-Author B",
-    journal: "Journal of Cleaner Production",
-    year: 2024,
-    type: "Journal Article",
-    doi: "10.1016/j.jclepro.2024.xxxxx",
-  },
-  {
-    title: "AI-Enabled Cheminformatics for Green Synthesis Pathway Prediction",
-    authors: "Your Name, Co-Author C",
-    journal: "ACS Sustainable Chemistry & Engineering",
+    title: "QRChEM: A Deep Learning Framework for Materials Property Prediction and Design Using QR Codes",
+    journal: "ACS Engineering Au",
     year: 2023,
     type: "Journal Article",
-    doi: "10.1021/acssuschemeng.xxxxx",
+    doi: "10.1021/acsengineeringau.3c00055",
+    description: "A novel approach combining QR code representation with deep learning for materials property prediction, enabling efficient and accurate molecular property predictions.",
+    image: qrchemImage,
   },
   {
-    title: "Multi-Objective Optimization Framework for Circular Economy Supply Chains",
-    authors: "Your Name, Co-Author D, Co-Author E",
-    journal: "Resources, Conservation and Recycling",
-    year: 2023,
-    type: "Journal Article",
-    doi: "10.1016/j.resconrec.2023.xxxxx",
-  },
-  {
-    title: "Deep Learning for Predictive Maintenance in Sustainable Manufacturing",
-    authors: "Your Name, Co-Author F",
-    conference: "International Conference on Sustainable AI",
-    year: 2023,
-    type: "Conference Paper",
-  },
-  {
-    title: "A Review of AI Applications in Sustainable Manufacturing",
-    authors: "Your Name",
-    journal: "Sustainable Production and Consumption",
+    title: "Modeling of CO₂ Fixation by Microalgae using Hybrid AI and Fuzzy Logic Methods",
+    journal: "Environmental Science and Pollution Research",
     year: 2022,
-    type: "Review Article",
-    doi: "10.1016/j.spc.2022.xxxxx",
+    type: "Journal Article",
+    doi: "10.1007/s11356-022-19683-0",
+    description: "Novel hybrid approach combining AI, fuzzy logic, and genetic algorithms for optimizing microalgal carbon dioxide fixation processes.",
+    image: microAlgaeImage,
+  },
+  {
+    title: "Green Synthesis of Silver Nanoparticles: RSM-ANN-LM Hybrid Modeling",
+    journal: "Chemical Physics Impact",
+    year: 2023,
+    type: "Journal Article",
+    doi: "10.1016/j.chphi.2023.100231",
+    description: "Advanced hybrid modeling approach combining RSM and neural networks for precise prediction of green-synthesized silver nanoparticle sizes.",
+    image: nanoParticleImage,
   },
 ];
 
@@ -61,41 +52,43 @@ const Publications = () => {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-12">
             {publications.map((pub, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader>
-                  <div className="flex items-start gap-4">
-                    <FileText className="text-primary mt-1 flex-shrink-0" size={24} />
-                    <div className="flex-1">
-                      <div className="flex items-start justify-between gap-4">
-                        <CardTitle className="text-xl">{pub.title}</CardTitle>
-                        <Badge variant="outline">{pub.type}</Badge>
-                      </div>
-                      <CardDescription className="mt-2 space-y-1">
-                        <p className="text-sm">{pub.authors}</p>
-                        <p className="text-sm font-medium">
-                          {pub.journal || pub.conference} ({pub.year})
-                        </p>
-                      </CardDescription>
+              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                      <img 
+                        src={pub.image}
+                        alt={`${pub.title} visualization`}
+                        className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-center space-y-4">
+                      <Badge className="w-fit" variant="outline">{pub.type}</Badge>
+                      <h3 className="text-xl font-semibold leading-tight">{pub.title}</h3>
+                      <p className="text-primary font-medium">{pub.journal} | {pub.year}</p>
+                      <p className="text-sm text-muted-foreground">{pub.description}</p>
+                      <p className="text-sm">
+                        DOI: <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline underline-offset-4">{pub.doi}</a>
+                      </p>
                     </div>
                   </div>
-                </CardHeader>
-                {pub.doi && (
-                  <CardContent>
-                    <a
-                      href={`https://doi.org/${pub.doi}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
-                    >
-                      <ExternalLink size={16} />
-                      DOI: {pub.doi}
-                    </a>
-                  </CardContent>
-                )}
+                </CardContent>
               </Card>
             ))}
+
+            <div className="text-center pt-6 border-t">
+              <a
+                href="https://scholar.google.com/citations?user=K_mqgDwAAAAJ&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+              >
+                View Complete Publication List on Google Scholar
+                <ArrowRight size={16} />
+              </a>
+            </div>
           </div>
         </div>
       </main>
